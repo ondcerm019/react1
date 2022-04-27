@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+// npx create-react-app {name}
+// cd {name}
+// npm start
+
+import {useState} from 'react';
 import './App.css';
+import {UpDown/*, DownUp*/} from "./components/UpDown"
 
 function App() {
+  const [first, setFirst] = useState(1);
+  const [second, setSecond] = useState(1);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UpDown number={first} setNumber={setFirst} />
+      <UpDown number={second} setNumber={setSecond} />
+      <p>{first + second}</p>
     </div>
   );
 }
